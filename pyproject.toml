@@ -14,7 +14,9 @@ dependencies = [
 [dependency-groups]
 dev = [
     "flet-cli>=0.81.0",
-    "flet-desktop-light>=0.81.0",
+    # Desktop clients:
+    "flet-desktop; platform_system == 'Windows' or platform_system == 'Darwin'",
+    "flet-desktop-light; platform_system == 'Linux'",
     "flet-web>=0.81.0",
 ]
 
