@@ -1,7 +1,7 @@
 import flet as ft
 
 def main(page: ft.Page):
-    page.title = "Login App"
+    page.title = ""
     page.theme_mode = ft.ThemeMode.DARK
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
@@ -24,13 +24,13 @@ def main(page: ft.Page):
             width=350,
             padding=30,
             border_radius=10,
-            bgcolor=ft.Colors.BLACK_54,  # fixed deprecation
+            bgcolor=ft.Colors.BLACK54,
             content=ft.Column(
                 controls=[
-                    ft.Text("PaaScual", size=30, weight=ft.FontWeight.BOLD),
+                    ft.Text("Manuel", size=30, weight=ft.FontWeight.BOLD),
                     username,
                     password,
-                    ft.Button(  # new API
+                    ft.Button(
                         content=ft.Text("Login"),
                         width=300,
                         on_click=login_click,
@@ -43,4 +43,4 @@ def main(page: ft.Page):
         )
     )
 
-ft.run(main)
+ft.app(main)
