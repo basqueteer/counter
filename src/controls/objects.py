@@ -11,7 +11,7 @@ def main(page):
         first_name.value = ""
         last_name.value = ""
         page.update()
-        first_name.focus()
+        #first_name.focus()
 
     page.add(
         first_name,

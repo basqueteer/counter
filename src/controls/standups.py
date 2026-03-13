@@ -5,7 +5,7 @@ async def main(page: ft.Page):
     t = ft.Text("Time: 0", color=ft.Colors.GREEN, size=24)
 
     task = ft.TextField(hint_text="Task...", width=250)
-    tasks = ft.Column()
+    tasks = ft.Column(alignment=ft.MainAxisAlignment.CENTER)
 
     async def start(e):
         for i in range(20):
@@ -27,12 +27,13 @@ async def main(page: ft.Page):
     page.add(
         ft.Column(
             [
-                ft.Row([t], alignment=ft.MainAxisAlignment.CENTER),
+                ft.Row([t], 
+                       alignment=ft.MainAxisAlignment.CENTER,),
                 ft.Row([ft.ElevatedButton("Start timer", on_click=start)],
                        alignment=ft.MainAxisAlignment.CENTER),
                 ft.Row([task, ft.ElevatedButton("Add task", on_click=add_task)],
                        alignment=ft.MainAxisAlignment.CENTER),
-                tasks,
+                ft.Row(tasks, alignment=ft.MainAxisAlignment.CENTER),
             ],
             spacing=10,
         )

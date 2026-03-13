@@ -1,6 +1,7 @@
 import flet as ft
 
 def main(page: ft.Page):
+
     container1 = ft.Container(
         content=ft.Text("Container 1"),
         width=100,
@@ -19,6 +20,6 @@ def main(page: ft.Page):
 
     column = ft.Column(spacing=40, controls=(container1, container2))
     
-    page.add(ft.Column([ ft.Text("Containers in a row:")]), column)
+    page.add(ft.Column([ ft.Text("Containers in a column:")]), column)
 
-ft.app(target=main)
+ft.run(main)

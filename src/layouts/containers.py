@@ -1,6 +1,7 @@
 import flet as ft
 
 def main(page: ft.Page):
+    
     page.title = "Containers with different background colours"
 
     c1 = ft.Container(

@@ -50,7 +50,6 @@ def main(page: ft.Page):
                     on_click=lambda e: print("Transparent clickable container with Ink clicked!"),
                 ),
             ],
-            alignment=ft.MainAxisAlignment.CENTER,
         ),
     )
 
