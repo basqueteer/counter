@@ -43,25 +43,31 @@ def main(page: ft.Page):
 
     camera_status = ft.Text("Waiting...", color=ft.Colors.WHITE, size=12)
 
+    loading_overlay = ft.Container(
+        alignment=ft.Alignment.CENTER,
+        content=ft.ProgressRing(color=ft.Colors.WHITE),
+    )
+
     camera_preview = fc.Camera(
         expand=True,
         preview_enabled=True,
-        content=ft.Container(
-            bgcolor=ft.Colors.BLACK,
-            alignment=ft.Alignment.CENTER,
-            content=ft.ProgressRing(color=ft.Colors.WHITE),
-        ),
+        content=loading_overlay,
     )
 
     async def on_camera_state_change(e: fc.CameraStateEvent):
         if e.has_error:
             camera_status.value = f"Camera error: {e.error_description}"
+            loading_overlay.visible = True
         elif e.is_taking_picture:
             camera_status.value = "Taking picture..."
+            loading_overlay.visible = False
         elif e.is_preview_paused:
             camera_status.value = "Preview paused"
+            loading_overlay.visible = True
         else:
             camera_status.value = "Camera ready"
+            loading_overlay.visible = False
+
         page.update()
 
     camera_preview.on_state_change = on_camera_state_change
