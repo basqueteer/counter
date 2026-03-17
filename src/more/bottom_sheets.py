@@ -10,6 +10,7 @@ def main(page: ft.Page):
 
     sheet = ft.BottomSheet(
         on_dismiss=handle_sheet_dismissal,
+        fullscreen=True,
         content=ft.Container(
             padding=50,
             content=ft.Column(

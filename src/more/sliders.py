@@ -4,6 +4,7 @@ def main(page):
 
     def slider1_changed(e):
         txt1.value = f"Slider changed to {e.control.value}"
+        txt1.value = f"{int(e.control.value)}"
         page.update()
 
     def slider2_changed(e):

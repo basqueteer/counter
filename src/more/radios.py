@@ -8,15 +8,10 @@ def main(page: ft.Page):
         page.update()
 
     language_radio = ft.RadioGroup(
-        content=ft.Column(
+        content=ft.Row(
             [
                 ft.Radio(value="Python", label="Python"),
                 ft.Radio(value="JavaScript", label="JavaScript"),
-                ft.Radio(value="C", label="C"),
-                ft.Radio(value="C++", label="C++"),
-                ft.Radio(value="C#", label="C#"),
-                ft.Radio(value="Java", label="Java"),
-                ft.Radio(value="Rust", label="Rust"),
             ]
         )
     )

@@ -13,16 +13,11 @@ def main(page: ft.Page):
         options=[
             ft.dropdown.Option("Python"),
             ft.dropdown.Option("JavaScript"),
-            ft.dropdown.Option("C"),
-            ft.dropdown.Option("C++"),
-            ft.dropdown.Option("C#"),
-            ft.dropdown.Option("Java"),
-            ft.dropdown.Option("Rust"),
         ],
     )
 
     submit_btn = ft.Button("Submit", on_click=button_clicked)
 
-    page.add(my_dropdown, submit_btn, output_text)
+    page.add(output_text, my_dropdown, submit_btn)
 
 ft.run(main)

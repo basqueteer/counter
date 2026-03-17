@@ -8,7 +8,9 @@ def main(page: ft.Page):
             else ft.ThemeMode.LIGHT
         )
         c.label = (
-            "Light theme" if page.theme_mode == ft.ThemeMode.LIGHT else "Dark theme"
+            "Light theme" 
+            if page.theme_mode == ft.ThemeMode.LIGHT 
+            else "Dark theme"
         )
         page.update()
 
